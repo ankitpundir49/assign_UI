@@ -1,20 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
-import './output.css';
+
+import {Provider} from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router} from 'react-router-dom';
-import MainView from './assignment_0.1/main';
 
 
+import { configureStore } from '@reduxjs/toolkit';
+import dataReducer from './basketballMatchScore/store/reducer'; 
+import MainView from './assignment/main';
+
+// Create the Redux store
+const store = configureStore({
+  reducer: {
+    data:dataReducer,
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Router>
+    <Provider store={store}>
+      <Router>
         <MainView/>
-    </Router>
+      </Router>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.jobBtn{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 140.4%;
+  text-align: center;
+  
+  border: 10px solid black;
+}
